@@ -1,0 +1,11 @@
+.logoimage {
+    width: 20%;
+}
+
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.justify-content-between {
+    background: #ff6200 !important;
+}
+
+ul.navbar-nav.ml-auto {
+    margin-top: 15px;
+}

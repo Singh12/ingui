@@ -1,0 +1,8 @@
+.footer-copyright.text-center.py-3 {
+    background: #ff6200 !important;
+    position: fixed;
+    width: 100%;
+    color: #fff;
+    bottom: 0;
+    font-size: 20px;
+}
