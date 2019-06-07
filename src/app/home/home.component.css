@@ -9,46 +9,31 @@ img.img-responsive {
     font-weight: bold;
 }
 
-@keyframes slideInFromLeft {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
-  
-  .bannerPage {  
-    /* This section calls the slideInFromLeft animation we defined above */
-    animation: 1s ease-out 0s 1 slideInFromLeft;
-    
-  }
 
+.bg { 
+  /* The image used */
+  background-image: url("https://img2.shaadi.com/assests/2019/images/6-million-home-banner-v1.jpg");
 
-  .flaximpl {
-    display: flex;           /* establish flex container */
-    flex-direction: column;  /* make main axis vertical */
-    justify-content: center; /* center items vertically, in this case */
-    align-items: center; 
-  }
+  /* Full height */
+  position: fixed; 
+  top: 0; 
+  left: 0; 
 
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
 
-  @keyframes zoominoutsinglefeatured {
-    0% {
-        transform: scale(1,1);
-    }
-    50% {
-        transform: scale(1.2,1.2);
-    }
-    100% {
-        transform: scale(1,1);
-    }
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.cardcontainer {
-    animation: zoominoutsinglefeatured 1s infinite ;
-    font-size: 72px;
-  background: -webkit-linear-gradient(#eee, #333);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.bg h4 {
+  text-align: center;
+  top: 60%;
+  color: #fff;
+  width: 100%;
+  position: absolute;
+  font-size: 54px;
 }

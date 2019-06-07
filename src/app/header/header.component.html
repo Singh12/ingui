@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
   <section class="container">
-  <a class="navbar-brand" href="#"><img src="assets/img/logo.jpg" alt="" class="img-responsive logoimage"></a>
+  <a class="navbar-brand" href="#">ZINDAGI MATRIMONY</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -9,20 +9,23 @@
       <li class="nav-item active">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item active">
-        <a class="nav-link" routerLink="product">
-           <span>Product</span></a>
+      <li class="nav-item active" *ngIf="!profilePage">
+        <a class="nav-link" routerLink="login">Login <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item active">
-          <a class="nav-link" routerLink="dashboard">
-             <span>Dashboard</span></a>
-        </li>
+      <li class="nav-item active" *ngIf="!profilePage">
+        <a class="nav-link" routerLink="register">Register <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active" *ngIf="profilePage">
+          <a class="nav-link" routerLink="register">Profile <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active" *ngIf="profilePage">
+          <a class="nav-link" (click)="logOut()">logOut <span class="sr-only">(current)</span></a>
+      </li>
     <li>
       <div class="form-group language ml-2">
         <select class="form-control language1" id="sel1">
           <option>English</option>
-          <option>Dutch</option>
-          <option>Spanish</option>
+          <option>Hindi</option>  
         </select>
       </div>
     </li>

@@ -1,0 +1,15 @@
+
+<div class="container mt-4" style="height: 75vh">
+    <h3>Profile Page</h3>
+  <div class="row">
+    <div class="col-3">
+
+        <div class="card" *ngFor="let pro of profile" [routerLink] = "pro.link"  routerLinkActive="active" >
+            <div class="card-body">{{pro.name}}</div>
+        </div>
+    </div>
+    <div class="col-9">
+        <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

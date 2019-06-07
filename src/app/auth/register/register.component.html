@@ -1,0 +1,170 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-12">
+      <h4>Register User</h4>
+
+      <form class="form-horizontal" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+        
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="firstName">First Name:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control"  placeholder="Enter First Name" formControlName="firstName">
+            <span *ngIf="!signupForm.get('firstName').valid && signupForm.get('firstName').touched">
+              This first name is required
+            </span>
+          </div>
+          
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="lastname">Last Name:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" placeholder="Enter Last Name" formControlName="lastName">
+            <span *ngIf="!signupForm.get('lastName').valid && signupForm.get('lastName').touched">
+              This last name is required
+            </span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="mobile">Mobile:</label>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" placeholder="Enter Mobile Name" formControlName="mobile">
+            <span *ngIf="!signupForm.get('mobile').valid && signupForm.get('mobile').touched">
+              This mobile number is required
+            </span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="email">Email Id:</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" placeholder="Enter Email Id" formControlName="email">
+            <span *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched">
+              This email is required
+            </span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="age">Age:</label>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" placeholder="Enter Age" formControlName="age">
+            <span *ngIf="!signupForm.get('age').valid && signupForm.get('age').touched">
+              This age is required
+            </span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="sex">Sex:</label>
+          <div class="col-sm-10">
+            <select ng-model='discussionsSelect' class='form-control' formControlName="gender">
+              <option value='male'>Male</option>
+              <option value='female'>Female</option>
+            </select>
+            <span *ngIf="!signupForm.get('gender').valid && signupForm.get('gender').touched">
+              This gender is required
+            </span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="qualification">Qualification:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" placeholder="Enter qualification" formControlName="qualification">
+            <span *ngIf="!signupForm.get('qualification').valid && signupForm.get('qualification').touched">
+              This qualification is required
+            </span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="monthlyIncome">Monthly Income:</label>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" placeholder="Enter qualification" formControlName="monthlyIncome">
+            <span *ngIf="!signupForm.get('monthlyIncome').valid && signupForm.get('monthlyIncome').touched">
+              This monthlyIncome is required
+            </span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="City">City:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" placeholder="Enter City" formControlName="City">
+            <span *ngIf="!signupForm.get('City').valid && signupForm.get('City').touched">
+              This City is required
+            </span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="religion">Religion:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" placeholder="Enter Religion" formControlName="religion">
+            <span *ngIf="!signupForm.get('religion').valid && signupForm.get('religion').touched">
+              This religion is required
+            </span>
+          </div>
+        </div>
+        <h5>Preferences</h5>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="religion">Veg/NonVeg:</label>
+          <div class="col-sm-10">
+            <select class='form-control' formControlName = "foodPreference">
+              <option value='veg'>Veg</option>
+              <option value='nonveg'>NonVeg</option>
+            </select>
+            <span *ngIf="!signupForm.get('foodPreference').valid && signupForm.get('foodPreference').touched">
+              This food Preference is required
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="religion">Smoking/NonSmoking:</label>
+          <div class="col-sm-10">
+            <select class='form-control' formControlName = "smokingPreference">
+              <option value='smoking'>Smoking</option>
+              <option value='nonsmoking
+              '>NonSmoking</option>
+            </select>
+            <span *ngIf="!signupForm.get('smokingPreference').valid && signupForm.get('smokingPreference').touched">
+              This smoking Preference is required
+            </span>
+          </div>
+        </div>
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="email">User Name:</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="email" placeholder="Enter User Name" formControlName="userName">
+            </div>
+            <span *ngIf="!signupForm.get('userName').valid && signupForm.get('userName').touched">
+              This user name is required
+            </span>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Password:</label>
+            <div class="col-sm-10"> 
+              <input type="password" class="form-control" id="pwd" placeholder="Enter password" formControlName="password">
+              <span *ngIf="!signupForm.get('password').valid && signupForm.get('password').touched">
+                This password is required
+              </span>
+            </div>
+            
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Confirm Password:</label>
+            <div class="col-sm-10"> 
+              <input type="password" class="form-control" id="pwd" placeholder="Enter Confirm password" formControlName="confirmPassword">
+              <span *ngIf="!signupForm.get('confirmPassword').valid && signupForm.get('confirmPassword').touched">
+                Please enter confirm password
+              </span>
+            </div>
+          </div>        
+        <div class="form-group"> 
+          <div class="col-sm-offset-2 col-sm-10 ">
+            <button type="submit" class="btn btn-default btn-warning mr-4">Register</button>
+            <button type="submit" class="btn btn-default btn-danger">Reset</button>
+          </div>
+        </div>
+
+      </form>
+      
+    </div>
+  </div>
+</div>

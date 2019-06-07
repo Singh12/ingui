@@ -1,0 +1,8 @@
+.footer-copyright.text-center {
+    background: #ff5a60 !important;
+    width: 100%;
+    color: #fff;
+    position: fixed !important;
+    bottom: 0;
+    font-size: 20px;
+}
