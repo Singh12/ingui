@@ -17,7 +17,7 @@ profilePage = false;
     this.profilePage = this.authService.getauthTokenData();
   }
   logOut() {
-    
+    this.authService.logout();
   }
 
 }

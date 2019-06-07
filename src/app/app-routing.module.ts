@@ -15,7 +15,7 @@ const routes: Routes = [
   {path:'', component: HomeComponent},
   {path:'login', component: LoginComponent},
   {path:'register', component: RegisterComponent},
-  {path: 'profile', component: ProfileComponent, children: [
+  {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard], children: [
     { path: '', redirectTo: "profilelist" , pathMatch: "full"},
     {path:'profilelist', component: ListprofileComponent},
     {path:'pendingrequest', component: PendingrequestComponent},

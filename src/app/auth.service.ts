@@ -9,6 +9,7 @@ export class AuthService {
   authTokenCheck = new Subject<boolean>();
   private authTokenDataCheck = false;
   private getProfile = new Subject<any>();
+  private userIds;
   userData = new Subject<any>();
   url = "http://10.117.189.73:9090/ZindagiMatrimony/api";
   constructor(private http: HttpClient, private route: Router) { }
@@ -35,12 +36,17 @@ export class AuthService {
     .subscribe(
       data => {
         console.log(data);
+        alert("User Register Successfully");
         this.route.navigate(['/login']);
       },
       error => {
         console.log(error);
         alert(error.error.message);
       });
+  }
+
+  getUserId() {
+    return this.userIds;
   }
 
   loginUser(loginForm) {
@@ -51,6 +57,7 @@ export class AuthService {
         alert(loginData.status);
         this.authTokenCheck.next(true);
         this.authTokenDataCheck = true;
+        this.userIds = loginData.id;
         this.userData.next({id: loginData.id, userName: loginData.userName, gender: loginData.gender, status: loginData.status})
         this.route.navigate(['/profile']);
 
@@ -62,12 +69,21 @@ export class AuthService {
   }
 
   listOfProfile(id) {
-    this.http.get("http://10.117.189.253:9090/ZindagiMatrimony/api/getAllProfiles/1")
+    console.log(id);
+    this.http.get("http://10.117.189.253:9090/ZindagiMatrimony/api/getAllProfiles/"+id)
     .subscribe(
       profile => {
         console.log(profile);
         this.getProfile.next(profile);
       }
     )
+  }
+
+  logout() {
+    
+    this.authTokenCheck.next(false);
+    this.authTokenDataCheck = false;
+    this.userIds = null;
+    this.route.navigate(['/login']);
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/auth.service';
 
 @Component({
   selector: 'app-pendingrequest',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PendingrequestComponent implements OnInit {
 
-  constructor() { }
+  profile: [];
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
+    this.authService.listOfProfile(1);
+    this.authService.getProfileOfUser().subscribe(
+      profile => this.profile = profile
+    )
   }
 
 }
